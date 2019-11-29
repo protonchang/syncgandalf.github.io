@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function preload(arrayOfImages) {
+        $(arrayOfImages).each(function(){
+            $('<img/>')[0].src = this;
+            // Alternatively you could use:
+            // (new Image()).src = this;
+        });
+    }
+
+        preload([
+        '/gdrev.gif',
+        '/gandalf_static.jpg'
+    ]);
+        </script>
+<style>
+  #image {
+  width:100%;
+  height:100%;
+}
+</style>
+</head>
+<body>
+  <img id="image" src="/gandalf_static.jpg">
+  <p id="second"></p>
+  <p id="mil"></p>
+  <script>
+    function myFunction() {
+          //var d = new Date();
+          //var t= d.getUTCMilliseconds());
+          //var y = Math.round(t / years);
+          var img = document.getElementById("image");
+          var mil_time=1;
+          while(mil_time){
+            var d = new Date();
+            var n = d.getSeconds();
+            var p = d.getMilliseconds();
+            //var c = d.getMilliseconds
+            if(n%3==0 && p==0){
+                //setTimeout(function(){
+                  img.src ="/gdrev.gif"
+                  //document.getElementById("second").innerHTML = n;
+                  //document.getElementById("mil").innerHTML = p;
+                //},500);
+                mil_time=0;
+                
+          }
+          //var d = new Date();
+          //var n = d.getUTCMilliseconds();
+          //document.getElementById("demo").innerHTML = n;
+          }
+        }
+        myFunction();
+    </script>
+</body>
+</html>
